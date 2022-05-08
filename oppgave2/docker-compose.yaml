@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  api:
+    build:
+      context: .
+    ports:
+      - 3000:3000
+    environment:
+      PORT: 3000
+      HOST: localhost
+      DBPASS: docker
+      DBPORT: 5432
+  db:
+    build: ./db/
+    ports:
+      - 5432:5432
